@@ -22,6 +22,10 @@ This project is a Selenium-based automation testing framework designed for testi
    ```
 4. Set the path to your ChromeDriver in the `DriverFactory.java` file.
 
+## Important Note
+- The inclusion of `config.properties` under the `src/main/resources` folder is mandatory for this script to work.
+- Each time the tests are run, new credentials are required because using an already registered email will be considered a failed test scenario.
+
 ## Usage
 - To run the tests, you can use the following command:
   ```bash
@@ -34,4 +38,3 @@ Xss attack test on Login form fields.
 ## Running Tests
 - Tests are located in the `src/test/java/com/ggwp` directory.
 - You can add more test cases as needed.
-

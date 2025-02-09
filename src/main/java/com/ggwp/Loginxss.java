@@ -8,7 +8,7 @@ public class Loginxss {
 
     private WebDriver driver;
     private Locators locators;
-
+    public boolean result;
     public void loginxss() {
         driver = DriverFactory.getdriver();
         locators = new Locators();
@@ -20,5 +20,7 @@ public class Loginxss {
         driver.findElement(locators.emailField).sendKeys(properties.getProperty("xssPayload"));
         driver.findElement(locators.passwordField).sendKeys(properties.getProperty("password"));
         driver.findElement(locators.loginButton).click();
+        result = driver.getCurrentUrl().contains("https://demowebshop.tricentis.com/login"); // Check if the current url is still /login
+
     }
 }
