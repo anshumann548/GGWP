@@ -1,4 +1,4 @@
-# Selenium Test Project
+# Automation Test Project
 
 ## Description
 This project is a Selenium-based automation testing framework designed for testing web applications. It includes functionalities for logging in and making purchases on a demo web shop.
@@ -12,7 +12,7 @@ This project is a Selenium-based automation testing framework designed for testi
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/anshumann548
    cd selenium-test
    ```
 2. Make sure you have [Maven](https://maven.apache.org/install.html) installed.
@@ -25,13 +25,13 @@ This project is a Selenium-based automation testing framework designed for testi
 ## Usage
 - To run the tests, you can use the following command:
   ```bash
-  mvn test
+  mvn clean test
   ```
-- The tests will execute the login and purchase functionalities on the demo web shop.
+- The tests will execute the 
+Register , login and purchase functionalities in  on the demo web shop.
+Xss attack test on Login form fields.
 
 ## Running Tests
 - Tests are located in the `src/test/java/com/ggwp` directory.
 - You can add more test cases as needed.
 
-## License
-This project is licensed under the MIT License.
