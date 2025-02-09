@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium Test Suite">
+    <test name="Registration and XSS Tests">
+        <classes>
+            <class name="com.ggwp.RegistrationTest"/>
+            <class name="com.ggwp.xssTest"/>
+        </classes>
+    </test>
+</suite>
