@@ -2,7 +2,6 @@ package com.ggwp;
 
 import java.time.Duration;
 import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +13,9 @@ public class Purchase {
 
     private WebDriver driver;
     private Locators locators;
-
+    boolean isUrlValid;
+    String currentUrl;
+    
     public void purchase() {
         driver = DriverFactory.getdriver();
         locators = new Locators();
@@ -65,18 +66,31 @@ public class Purchase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locators.continueButton));
         driver.findElement(locators.continueButton).click();
 
-        // Step 9: Continue 
+        // Step 9: Continue to shipping address 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping-buttons-container']/input")));
         driver.findElement(By.xpath("//*[@id='shipping-buttons-container']/input")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping-buttons-container']/input")));
-        driver.findElement(By.xpath("//*[@id='shipping-buttons-container']/input")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping-method-buttons-container']/input")));
+        driver.findElement(By.xpath("//*[@id='shipping-method-buttons-container']/input")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='shipping-buttons-container']/input")));
-        driver.findElement(By.xpath("//*[@id='shipping-buttons-container']/input")).click();
+       
+        // Step 9: Continue to payment method
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='button-1 payment-method-next-step-button']")));
+        driver.findElement(By.xpath("//input[@class='button-1 payment-method-next-step-button']")).click();
 
-        String currentUrl = driver.getCurrentUrl();
+        // Step 10: Continue to payment information
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='button-1 payment-info-next-step-button']")));
+        driver.findElement(By.xpath("//input[@class='button-1 payment-info-next-step-button']")).click();
+        
+        // Step 11: Confirm order
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='button-1 confirm-order-next-step-button']")));
+        driver.findElement(By.xpath("//input[@class='button-1 confirm-order-next-step-button']")).click();
 
+
+        pauseExecution(3000); 
+        currentUrl = driver.getCurrentUrl();
+        System.out.println("Current URL: " + currentUrl);
+        isUrlValid = currentUrl.contains(locators.completedurl);
         // Clean up
         if (driver != null) {
             driver.quit();

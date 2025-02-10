@@ -12,6 +12,8 @@ public class xssTest {
         scripter.loginxss();
         boolean result = scripter.result;
         Assert.assertTrue(result , "XSS test passed");
+
+        scripter.quit();
     }
 
 }

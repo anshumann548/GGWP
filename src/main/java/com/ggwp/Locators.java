@@ -6,6 +6,7 @@ public class Locators {
   
     public final String Baseurl = "https://demowebshop.tricentis.com/register";
     public final String Carturl = "https://demowebshop.tricentis.com/cart";
+    public final String completedurl = "https://demowebshop.tricentis.com/checkout/completed/";
     public By firstNameField = By.id("FirstName");
     public By lastNameField = By.id("LastName");
     public By emailField = By.id("Email");

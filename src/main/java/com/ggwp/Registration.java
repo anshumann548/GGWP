@@ -31,7 +31,7 @@ public class Registration {
 
         driver.findElement(locators.registerButton).click();
     
-   
+        driver.quit();
     }
 
 

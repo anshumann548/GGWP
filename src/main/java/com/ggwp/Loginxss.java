@@ -22,5 +22,9 @@ public class Loginxss {
         driver.findElement(locators.loginButton).click();
         result = driver.getCurrentUrl().contains("https://demowebshop.tricentis.com/login"); // Check if the current url is still /login
 
+
     }
+public void quit() {
+    driver.quit();
+}
 }
