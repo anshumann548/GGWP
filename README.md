@@ -24,7 +24,7 @@ This project is a Selenium-based automation testing framework designed for testi
 
 ## Important Note
 - The inclusion of `config.properties` under the `src/main/resources` folder is mandatory for this script to work.
-- Each time the tests are run, new credentials are required because using an already registered email will be considered a failed test scenario.
+- Each time the tests are run, new credentials are required because using an already registered email will be considered a failed test scenario (user already exist).
 
 ## Usage
 - To run the tests, you can use the following command:
